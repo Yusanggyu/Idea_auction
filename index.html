@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idea Auction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Idea Auction</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('home')">Home</a></li>
+                <li><a href="#" onclick="showSection('register')">Register</a></li>
+                <li><a href="#" onclick="showSection('login')">Login</a></li>
+                <li><a href="#" onclick="showSection('submit-idea')">Submit Idea</a></li>
+                <li><a href="#" onclick="showSection('ideas')">Ideas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>아이디어 경매소에 오신 것을 환영합니다.</h2>
+            <p>여러분들의 아이디어를 마음껏 뽐내보세요!</p>
+        </section>
+
+        <section id="register" class="hidden">
+            <h2>회원가입</h2>
+            <form id="registerForm">
+                <label for="username">이름</label>
+                <input type="text" id="username" name="username" required>
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">가입</button>
+            </form>
+        </section>
+
+        <section id="login" class="hidden">
+            <h2>로그인</h2>
+            <form id="loginForm">
+                <label for="loginUsername">이름</label>
+                <input type="text" id="loginUsername" name="loginUsername" required>
+                <label for="loginPassword">비밀번호</label>
+                <input type="password" id="loginPassword" name="loginPassword" required>
+                <button type="submit">로그인</button>
+            </form>
+        </section>
+
+        <section id="submit-idea" class="hidden">
+            <h2>판매</h2>
+            <form id="ideaForm">
+                <label for="title">제목</label>
+                <input type="text" id="title" name="title" required>
+                <label for="description">설명</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="startingPrice">최소 가격</label>
+                <input type="number" id="startingPrice" name="startingPrice" required>
+                <button type="submit">제출</button>
+            </form>
+        </section>
+
+        <section id="ideas" class="hidden">
+            <h2>아이디어</h2>
+            <ul id="ideasList"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
