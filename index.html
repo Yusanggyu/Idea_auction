@@ -88,6 +88,109 @@
             </form>
         </section>
 
+        <section id="submit-idea" class="hidden">
+            <h2>판매</h2>
+            <form id="ideaForm">
+                <label for="title">제목</label>
+                <input type="text" id="title" name="title" required>
+                <label for="description">설명</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="startingPrice">최소 가격</label>
+                <input type="number" id="startingPrice" name="startingPrice" required>
+                Original file line number	Original file line	Diff line number	Diff line change
+	@@ -16,6 +16,7 @@ <h1>Idea Auction</h1>
+
+                <li><a href="#" onclick="showSection('login')">Login</a></li>
+
+                <li><a href="#" onclick="showSection('submit-idea')">Submit Idea</a></li>
+
+                <li><a href="#" onclick="showSection('ideas')">Ideas</a></li>
+
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+	@@ -46,29 +47,179 @@ <h2>로그인</h2>
+
+                <input type="text" id="loginUsername" name="loginUsername" required>
+
+                <label for="loginPassword">비밀번호</label>
+
+                <input type="password" id="loginPassword" name="loginPassword" required>
+
+
+
+                <button type="submit">로그인</button>
+
+            </form>
+
+        </section>
+
+
+
+
+        <section id="submit-idea" class="hidden">
+
+            <h2>판매</h2>
+
+            <form id="ideaForm">
+
+                <label for="title">제목</label>
+
+                <input type="text" id="title" name="title" required>
+
+                <label for="description">설명</label>
+
+                <textarea id="description" name="description" required></textarea>
+
+                <label for="startingPrice">최소 가격</label>
+
+                <input type="number" id="startingPrice" name="startingPrice" required>
+                
+                <button type="submit">제출</button>
+
+            </form>
+
+        </section>
+
+        <section id="submit-idea" class="hidden">
+            <h2>아이디어 업로드</h2>
+            <form id="ideaForm">
+                <label for="title">아이디어 명</label>
+                <input type="text" id="title" name="title" required>
+                <label for="description">설명</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="category">분야</label>
+                <select id="category" name="category">
+                    <option value="">Select</option>
+                    <option value="daily">일상</option>
+                    <option value="technology">기술</option>
+                    <option value="medical">의료</option>
+                    <option value="environment">환경</option>
+                    <option value="education">교육</option>
+                    <option value="finance">금융</option>
+                    <option value="entertainment">오락</option>
+                </select>
+                <label for="language">언어</label>
+                <select id="language" name="language">
+                    <option value="">Select</option>
+                    <option value="korean">한국어</option>
+                    <option value="english">영어</option>
+                    <option value="japanese">일본어</option>
+                </select>
+                <label for="file">파일 업로드</label>
+                <input type="file" id="file" name="file">
+                <label for="image">이미지 업로드</label>
+                <input type="file" id="image" name="image">
+                <label for="scheduleTime">시간 지정</label>
+                <input type="datetime-local" id="scheduleTime" name="scheduleTime">
+                <button type="submit">제출</button>
+            </form>
+        </section>
+
         <section id="ideas" class="hidden">
             <h2>아이디어 검색</h2>
             <form id="searchForm">
