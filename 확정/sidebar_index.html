@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Sidebar Menu</title>
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap'><link rel="stylesheet" href="./sidebar_style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<nav class="sidebar close">
+  <header>
+    <div class="image-text">
+      <span class="image">
+        <img src="data:image/png;base64,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">
+      </span>
+
+      <div class="text logo-text">
+        <span class="name">유상규 </span>
+        <span class="profession">똥꾸멍</span>
+      </div>
+    </div>
+
+    <i class='bx bx-chevron-right toggle'></i>
+  </header>
+
+  <div class="menu-bar">
+    <div class="menu">
+
+      <li class="search-box">
+        <i class='bx bx-search icon'></i>
+        <input type="text" placeholder="Search...">
+      </li>
+
+      <ul class="menu-links">
+        <li class="nav-link">
+          <a href="#">
+            <i class='bx bx-home-alt icon'></i>
+            <span class="text nav-text">Home</span>
+          </a>
+        </li>
+
+        <li class="nav-link">
+          <a href="#">
+            <i class='bx bx-upload icon'></i>
+            <span class="text nav-text">Submit Idea</span>
+          </a>
+        </li>
+
+        <li class="nav-link">
+          <a href="#">
+            <i class='bx bx-heart icon'></i>
+            <span class="text nav-text">Wish List</span>
+          </a>
+        </li>
+
+        <li class="nav-link">
+          <a href="#">
+            <i class='bx bx-user-circle icon'></i>
+            <span class="text nav-text">My Page</span>
+          </a>
+        </li>
+
+        <li class="nav-link">
+          <a href="#">
+            <i class='bx bx-wallet icon'></i>
+            <span class="text nav-text">Wallets</span>
+          </a>
+        </li>
+
+        <li class="nav-link">
+          <a href="#">
+            <i class='bx bx-cog icon'></i>
+            <span class="text nav-text">Setting</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="bottom-content">
+      <li class="">
+        <a href="#">
+          <i class='bx bx-log-out icon'></i>
+          <span class="text nav-text">Logout</span>
+        </a>
+      </li>
+
+      <li class="mode">
+        <div class="sun-moon">
+          <i class='bx bx-moon icon moon'></i>
+          <i class='bx bx-sun icon sun'></i>
+        </div>
+        <span class="mode-text text">Dark mode</span>
+
+        <div class="toggle-switch">
+          <span class="switch"></span>
+        </div>
+      </li>
+
+    </div>
+  </div>
+
+</nav>
+
+<section class="home">
+  <div class="text">아이디어 경매소</div>
+</section>
+<!-- partial -->
+  <script  src="./sidebar_script.js"></script>
+
+</body>
+</html>
