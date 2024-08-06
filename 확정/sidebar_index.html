@@ -104,7 +104,17 @@
 <section class="home" id="main-content"> 
   <div class="text">아이디어 경매소</div> 
 </section>
+
 <script src="./sidebar_script.js"></script>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.Search);
+  const username = urlParams.get('username');
+
+  if (username) {
+    document.getElementById('username').textContent = username;
+  }
+</script>
 
 </body>
 </html>
