@@ -93,3 +93,30 @@ document.getElementById('setting-link').addEventListener('click', function(event
   event.preventDefault();  
   document.getElementById('main-content').innerHTML = '<div class="text">설정</div>';  
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('.slide');
+  const indicators = document.querySelectorAll('.indicator');
+  let currentIndex = 0;
+
+  function showSlide(index) {
+      const totalSlides = slides.length;
+      if (index >= totalSlides) index = 0;
+      if (index < 0) index = totalSlides - 1;
+      
+      document.querySelector('.slides').style.transform = `translateX(${-index * 100}%)`;
+      
+      indicators.forEach(indicator => indicator.classList.remove('active'));
+      indicators[index].classList.add('active');
+      
+      currentIndex = index;
+  }
+
+  showSlide(currentIndex);
+
+  indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', () => showSlide(index));
+  });
+
+  setInterval(() => showSlide(currentIndex + 1), 3000);
+});
