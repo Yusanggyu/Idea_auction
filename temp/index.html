@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idea Auction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Idea Auction</h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="showSection('home')">Home</a></li>
+                <li><a href="#" onclick="showSection('register')">Register</a></li>
+                <li><a href="#" onclick="showSection('login')">Login</a></li>
+                <li><a href="#" onclick="showSection('submit-idea')">Submit Idea</a></li>
+                <li><a href="#" onclick="showSection('ideas')">Ideas</a></li>
+                <li><a href="#" onclick="showSection('my-page')">My Page</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>아이디어 경매소에 오신 것을 환영합니다.</h2>
+            <p>여러분들의 아이디어를 마음껏 뽐내보세요!</p>
+        </section>
+
+        <section id="register" class="hidden">
+            <h2>회원가입</h2>
+            <form id="registerForm">
+                <label for="username">이름</label>
+                <input type="text" id="username" name="username" required>
+                <label for="email">이메일</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">가입</button>
+            </form>
+        </section>
+
+        <section id="login" class="hidden">
+            <h2>로그인</h2>
+            <form id="loginForm">
+                <label for="loginUsername">이름</label>
+                <input type="text" id="loginUsername" name="loginUsername" required>
+                <label for="loginPassword">비밀번호</label>
+                <input type="password" id="loginPassword" name="loginPassword" required>
+                <label for="verificationCode">확인 코드</label>
+                <input type="text" id="verificationCode" name="verificationCode" required>
+                <button type="submit">로그인</button>
+            </form>
+        </section>
+
+        <section id="submit-idea" class="hidden">
+            <h2>아이디어 업로드</h2>
+            <form id="ideaForm">
+                <label for="title">아이디어 명</label>
+                <input type="text" id="title" name="title" required>
+                <label for="description">설명</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="category">분야</label>
+                <select id="category" name="category">
+                    <option value="">Select</option>
+                    <option value="daily">일상</option>
+                    <option value="technology">기술</option>
+                    <option value="medical">의료</option>
+                    <option value="environment">환경</option>
+                    <option value="education">교육</option>
+                    <option value="finance">금융</option>
+                    <option value="entertainment">오락</option>
+                </select>
+                <label for="language">언어</label>
+                <select id="language" name="language">
+                    <option value="">Select</option>
+                    <option value="korean">한국어</option>
+                    <option value="english">영어</option>
+                    <option value="japanese">일본어</option>
+                </select>
+                <label for="file">파일 업로드</label>
+                <input type="file" id="file" name="file">
+                <label for="image">이미지 업로드</label>
+                <input type="file" id="image" name="image">
+                <label for="scheduleTime">시간 지정</label>
+                <input type="datetime-local" id="scheduleTime" name="scheduleTime">
+                <button type="submit">제출</button>
+            </form>
+        </section>
+
+        <section id="submit-idea" class="hidden">
+            <h2>판매</h2>
+            <form id="ideaForm">
+                <label for="title">제목</label>
+                <input type="text" id="title" name="title" required>
+                <label for="description">설명</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="startingPrice">최소 가격</label>
+                <input type="number" id="startingPrice" name="startingPrice" required>
+                Original file line number	Original file line	Diff line number	Diff line change
+	@@ -16,6 +16,7 @@ <h1>Idea Auction</h1>
+
+                <li><a href="#" onclick="showSection('login')">Login</a></li>
+
+                <li><a href="#" onclick="showSection('submit-idea')">Submit Idea</a></li>
+
+                <li><a href="#" onclick="showSection('ideas')">Ideas</a></li>
+
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+	@@ -46,29 +47,179 @@ <h2>로그인</h2>
+
+                <input type="text" id="loginUsername" name="loginUsername" required>
+
+                <label for="loginPassword">비밀번호</label>
+
+                <input type="password" id="loginPassword" name="loginPassword" required>
+
+
+
+                <button type="submit">로그인</button>
+
+            </form>
+
+        </section>
+
+
+
+
+        <section id="submit-idea" class="hidden">
+
+            <h2>판매</h2>
+
+            <form id="ideaForm">
+
+                <label for="title">제목</label>
+
+                <input type="text" id="title" name="title" required>
+
+                <label for="description">설명</label>
+
+                <textarea id="description" name="description" required></textarea>
+
+                <label for="startingPrice">최소 가격</label>
+
+                <input type="number" id="startingPrice" name="startingPrice" required>
+                
+                <button type="submit">제출</button>
+
+            </form>
+
+        </section>
+
+        <section id="submit-idea" class="hidden">
+            <h2>아이디어 업로드</h2>
+            <form id="ideaForm">
+                <label for="title">아이디어 명</label>
+                <input type="text" id="title" name="title" required>
+                <label for="description">설명</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="category">분야</label>
+                <select id="category" name="category">
+                    <option value="">Select</option>
+                    <option value="daily">일상</option>
+                    <option value="technology">기술</option>
+                    <option value="medical">의료</option>
+                    <option value="environment">환경</option>
+                    <option value="education">교육</option>
+                    <option value="finance">금융</option>
+                    <option value="entertainment">오락</option>
+                </select>
+                <label for="language">언어</label>
+                <select id="language" name="language">
+                    <option value="">Select</option>
+                    <option value="korean">한국어</option>
+                    <option value="english">영어</option>
+                    <option value="japanese">일본어</option>
+                </select>
+                <label for="file">파일 업로드</label>
+                <input type="file" id="file" name="file">
+                <label for="image">이미지 업로드</label>
+                <input type="file" id="image" name="image">
+                <label for="scheduleTime">시간 지정</label>
+                <input type="datetime-local" id="scheduleTime" name="scheduleTime">
+                <button type="submit">제출</button>
+            </form>
+        </section>
+
+        <section id="ideas" class="hidden">
+            <h2>아이디어 검색</h2>
+            <form id="searchForm">
+                <label for="keyword">키워드</label>
+                <input type="text" id="keyword" name="keyword" placeholder="e.g., function, language, idea name">
+
+                <label for="category">분야</label>
+                <select id="category" name="category">
+                    <option value="">Select</option>
+                    <option value="daily">일상</option>
+                    <option value="technology">기술</option>
+                    <option value="medical">의료</option>
+                    <option value="environment">환경</option>
+                    <option value="education">교육</option>
+                    <option value="finance">금융</option>
+                    <option value="entertainment">오락</option>
+                </select>
+
+                <label for="language">언어</label>
+                <select id="language" name="language">
+                    <option value="">Select</option>
+                    <option value="korean">한국어</option>
+                    <option value="english">영어</option>
+                    <option value="japanese">일본어</option>
+                </select>
+
+                <label for="function">함수</label>
+                <input type="text" id="function" name="function" placeholder="e.g., sort, filter">
+
+                <label for="ideaName">아이디어명</label>
+                <input type="text" id="ideaName" name="ideaName" placeholder="e.g., innovative solution">
+
+                <label for="priceRange">가격 범위</label>
+                <input type="text" id="priceRange" name="priceRange" placeholder="e.g., 100-500">
+
+                <label for="sort">정렬</label>
+                <select id="sort" name="sort">
+                    <option value="newest">최근 아이디어 순</option>
+                    <option value="oldest">오래된 아이디어 순</option>
+                    <option value="lowPrice">가격 낮은 순</option>
+                    <option value="highPrice">가격 높은 순</option>
+                </select>
+
+                <button type="submit">검색</button>
+                <button type="button" onclick="resetSearch()">초기화</button>
+            </form>
+            <ul id="ideasList"></ul>
+        </section>
+
+        <section id="auction" class="hidden">
+            <h2>경매</h2>
+            <form id="auctionForm">
+                <label for="auctionIdeaName">아이디어 명</label>
+                <input type="text" id="auctionIdeaName" name="auctionIdeaName">
+                <label for="auctionKeyword">키워드</label>
+                <input type="text" id="auctionKeyword" name="auctionKeyword">
+                <label for="auctionCreator">제작자</label>
+                <input type="text" id="auctionCreator" name="auctionCreator">
+                <label for="auctionDate">올린 날짜</label>
+                <input type="date" id="auctionDate" name="auctionDate">
+                <label for="auctionPrice">시세</label>
+                <input type="number" id="auctionPrice" name="auctionPrice">
+                <label for="auctionWishlist">찜</label>
+                <input type="checkbox" id="auctionWishlist" name="auctionWishlist">
+                <label for="auctionShare">공유</label>
+                <input type="button" id="auctionShare" name="auctionShare" value="Share">
+            </form>
+        </section>
+
+        <section id="ratings" class="hidden">
+            <h2>별점</h2>
+            <div>
+                <h3>평균 별점</h3>
+                <p id="averageRating"></p>
+                <h3>별점 개수</h3>
+                <ul>
+                    <li>1점: <span id="rating1Count"></span></li>
+                    <li>2점: <span id="rating2Count"></span></li>
+                    <li>3점: <span id="rating3Count"></span></li>
+                    <li>4점: <span id="rating4Count"></span></li>
+                    <li>5점: <span id="rating5Count"></span></li>
+                </ul>
+                <h3>별점 추세</h3>
+                <p id="monthlyTrend"></p>
+            </div>
+        </section>
+
+        <section id="upload-cancel" class="hidden">
+            <h2>업로드 취하</h2>
+            <form id="uploadCancelForm">
+                <label for="cancellationReason">취하하는 이유</label>
+                <textarea id="cancellationReason" name="cancellationReason" required></textarea>
+                <button type="submit">취하 확인</button>
+            </form>
+        </section>
+
+        <section id="my-page" class="hidden">
+            <h2>마이 페이지</h2>
+            <div>
+                <h3>내 정보</h3>
+                <p>닉네임: <span id="nickname"></span></p>
+                <p>아이디: <span id="userId"></span></p>
+                <p>프로필사진: <img id="" src="" alt=""></p>
+                <p>별점: <span id="userRating"></span></p>
+                <p>등록 개수: <span id="registeredCount"></span></p>
+                <p>진행중인 거래 개수: <span id="ongoingTransactions"></span></p>
+            </div>
+            <div>
+                <h3>설정</h3>
+                <form id="settingsForm">
+                    <label for="newNickname">닉네임 변경</label>
+                    <input type="text" id="newNickname" name="newNickname">
+                    <label for="newProfilePicture">프로필사진 변경</label>
+                    <input type="file" id="newProfilePicture" name="newProfilePicture">
+                    <button type="submit">변경 사항 저장</button>
+                </form>
+            </div>
+            <div>
+                <h3>찜 목록</h3>
+                <ul id="wishlist">
+                    <!-- 찜한 아이디어 목록 여기에 추가됨 -->
+                </ul>
+            </div>
+            <div>
+                <h3>구매 내역</h3>
+                <ul id="purchaseHistory">
+                    <!-- 구매한 아이디어 목록 여기에 추가됨 -->
+                </ul>
+            </div>
+        </section>
+
+        <script src="script.js"></script>
+    </main>
+</body>
+</html>
