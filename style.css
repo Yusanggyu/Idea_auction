@@ -7,6 +7,42 @@
   font-family: "Poppins", sans-serif;
 }
 
+.home .item {
+  width: 200px;
+  position: relative;
+  text-align: center;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.home .item img {
+  transition: transform 0.3s ease;
+}
+
+.home .item:hover img {
+  transform: scale(1.05);
+  z-index: 0;
+}
+
+.home .item .like-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff4b4b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+
 :root {
   /* ===== Colors ===== */
   --body-color: #e4e9f7;
